@@ -30,19 +30,16 @@ let addService2 = prompt('Какой дополнительный тип усл�
 let price2 = +prompt('Сколько это будет стоить?', '1000');
 fullPrice = screenPrice + price + price2;
 console.log(fullPrice);
-let servicePercentPrice = +fullPrice - 1200;
+let servicePercentPrice = fullPrice -(fullprice * (rollback/100));
 console.log(Math.ceil(servicePercentPrice));
 
 if (fullPrice >= 30000){
-  alert('Даем скидку в 10%');
-} 
-if (fullPrice >= 15000){
-  alert('Даем скидку в 5%');
-} 
-if (fullPrice < 15000 && fullPrice >= 0){
-  alert('Скидка не предусмотрена');
-} 
-if (fullPrice == -1){
-  alert('Что то пошло не так');
+    alert('Даем скидку в 10%');
+} else if (fullPrice >= 15000){
+    alert('Даем скидку в 5%');
+} else if (fullPrice < 15000 && fullPrice >= 0){
+    alert('Скидка не предусмотрена');
+} else if (fullPrice < 0){
+    alert('Что то пошло не так');
 }
 
