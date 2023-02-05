@@ -1,6 +1,6 @@
 'use strict'
 
-let title = prompt('как называется ваш проект?')
+let title = prompt('Как называется ваш проект?')
 let screens = prompt('Какие типы экранов нужно разработать?', 'Простые/Сложные/Интерактивные')
 let screenPrice = +prompt('Сколько будет стоить данная работа?', '1200')
 let adaptive = confirm('Нужен ли адаптив на сайте?')
@@ -34,13 +34,13 @@ let fullPrice = getFullPrice()
 
 
 const getTitle = (str) => {
-    let title = str.trim()
-    let result = title.str[0].toUpperCase() + str.substring(1).toloweCase()
-    return result
+    return title.trim()[0].toUpperCase() + title.slice(1).toLowerCase()
+     
 }
+console.log(getTitle);
 
 title = getTitle(title);
-
+console.log(title)
 function getServicePercentPrices() {
   return fullPrice - (fullPrice * (rollback / 100))
 }
