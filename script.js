@@ -32,9 +32,14 @@ function getFullPrice() {
 
 let fullPrice = getFullPrice()
 
-function getTitle(str) {
-  return title = str[0].toUpperCase + str.substring(1)
+
+const getTitle = (str) => {
+    let title = str.trim()
+    let result = title.str[0].toUpperCase() + str.substring(1)
+    return result
 }
+
+title = getTitle(title);
 
 function getServicePercentPrices() {
   return fullPrice - (fullPrice * (rollback / 100))
