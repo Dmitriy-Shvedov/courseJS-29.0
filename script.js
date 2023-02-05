@@ -35,7 +35,7 @@ let fullPrice = getFullPrice()
 
 const getTitle = (str) => {
     let title = str.trim()
-    let result = title.str[0].toUpperCase() + str.substring(1)
+    let result = title.str[0].toUpperCase() + str.substring(1).toloweCase()
     return result
 }
 
