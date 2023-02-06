@@ -9,7 +9,7 @@ let addPrice = +prompt('Сколько это будет стоить?', '1000')
 let addService2 = prompt('Какой дополнительный тип услуги нужен?')
 let addPrice2 = +prompt('Сколько это будет стоить?', '1000')
 let rollback = 1
-
+let allServicePrices
 
 
 
@@ -23,8 +23,11 @@ let rollback = 1
 const getAllServicePrices = function () {
   return addPrice + addPrice
 }
+const showTypeOf = function (variable) {
+  console.log(variable, typeof variable);
+}
 
-const allServicePrices = getAllServicePrices()
+
 
 function getFullPrice() {
   return screenPrice + allServicePrices
@@ -33,14 +36,32 @@ function getFullPrice() {
 let fullPrice = getFullPrice()
 
 
-const getTitle = (str) => {
-    return title.trim()[0].toUpperCase() + title.trim().slice(1).toLowerCase()
+// const getTitle = function () {
+
+//     return title.trim()[0].toUpperCase() + title.trim().substr(1).toLowerCase()
      
+// }
+const getTitle = (str) => {
+    let text = str.trim()
+    let result = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    return result
 }
-console.log(getTitle);
 
 title = getTitle(title);
-console.log(title)
+
+
+const getRollbackMessage = function (prise) {
+  if (prise >= 30000){
+    return 'Даем скидку в 10%';
+  } else if (prise >= 15000 && prise < 30000){
+    return'Даем скидку в 5%';
+  } else if (prise < 15000 && prise >= 0){
+    return'Скидка не предусмотрена';
+  } else if (prise < 0){
+    return'Что то пошло не так';
+  }
+}
+
 function getServicePercentPrices() {
   return fullPrice - (fullPrice * (rollback / 100))
 }
@@ -48,17 +69,7 @@ function getServicePercentPrices() {
 let servicePercentPrice = getServicePercentPrices()
 
 
-
-// if (fullPrice >= 30000){
-//   alert('Даем скидку в 10%');
-// } else if (fullPrice >= 15000 && fullPrice < 30000){
-//   alert('Даем скидку в 5%');
-// } else if (fullPrice < 15000 && fullPrice >= 0){
-//   alert('Скидка не предусмотрена');
-// } else if (fullPrice < 0){
-//   alert('Что то пошло не так');
-// }
-
+allServicePrices = getAllServicePrices()
 getAllServicePrices('allServicePrices')
 // getRollbackMessage()
 getServicePercentPrices()
