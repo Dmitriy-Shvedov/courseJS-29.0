@@ -11,23 +11,13 @@ let addPrice2 = +prompt('Сколько это будет стоить?', '1000'
 let rollback = 1
 let allServicePrices
 
-
-
-
-
-
-
-
-
-
-const getAllServicePrices = function () {
-  return addPrice + addPrice
-}
 const showTypeOf = function (variable) {
   console.log(variable, typeof variable);
 }
 
-
+const getAllServicePrices = function () {
+  return addPrice + addPrice2
+}
 
 function getFullPrice() {
   return screenPrice + allServicePrices
@@ -35,20 +25,11 @@ function getFullPrice() {
 
 let fullPrice = getFullPrice()
 
-
-// const getTitle = function () {
-
-//     return title.trim()[0].toUpperCase() + title.trim().substr(1).toLowerCase()
-     
-// }
 const getTitle = (str) => {
-    let text = str.trim()
-    let result = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    let title = str.trim()
+    let result = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase();
     return result
 }
-
-title = getTitle(title);
-
 
 const getRollbackMessage = function (prise) {
   if (prise >= 30000){
@@ -66,15 +47,14 @@ function getServicePercentPrices() {
   return fullPrice - (fullPrice * (rollback / 100))
 }
 
+title = getTitle(title);
 let servicePercentPrice = getServicePercentPrices()
-
-
 allServicePrices = getAllServicePrices()
 getAllServicePrices('allServicePrices')
-// getRollbackMessage()
-getServicePercentPrices()
 
-// console.log(showTypeOf);
-console.log(screens.length);
+console.log(showTypeOf);
 console.log(title);
+console.log(screens);
+console.log(fullPrice)
+console.log(servicePercentPrice)
 
