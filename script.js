@@ -11,15 +11,6 @@ let addPrice2 = +prompt('Сколько это будет стоить?', '1000'
 let rollback = 1
 
 
-
-
-
-
-
-
-
-
-
 const getAllServicePrices = function () {
   return addPrice + addPrice
 }
