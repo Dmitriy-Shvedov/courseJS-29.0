@@ -25,9 +25,7 @@ const asking = function () {
   //   screenPrice = prompt('Сколько будет стоить данная работа?')
     
   // }
-  do {
-    screenPrice = prompt('Сколько будет стоить данная работа?')
-  } while (!isNumber(screenPrice));
+
     
   
 
@@ -36,6 +34,7 @@ const asking = function () {
 
 const getAllServicePrices = function () {
   let sum = 0
+  let numb = 0
   for (let i = 0; i < 2; i++) {
 
     if (i === 0) {
@@ -44,7 +43,10 @@ const getAllServicePrices = function () {
         addService2 = prompt('Какой дополнительный тип услуги нужен?', 'модалка')
     }
 
-    sum += +prompt('Сколько это будет стоить?', '1000')
+    do {
+      numb = prompt('Сколько это будет стоить?', '1000')
+    } while (!isNumber(numb));
+    sum += +numb;
     
   }
   return sum
@@ -56,7 +58,7 @@ const showTypeOf = function (variable) {
 }
 
 const getFullPrice = function () {
-  return screenPrice + allServicePrices
+  return +screenPrice + +allServicePrices
 }
 
 const getServicePercentPrice = function () {
@@ -88,7 +90,7 @@ fullPrice = getFullPrice()
 servicePercentPrice = getServicePercentPrice()
 title = getTitle(title);
 
-getAllServicePrices('allServicePrices')
+// getAllServicePrices('allServicePrices')
 
 console.log('allServicePrices', allServicePrices);
 
