@@ -73,13 +73,14 @@ const appData = {
     appData.fullPrice = appData.getFullPrice() 
     appData.servicePercentPrice = appData.getServicePercentPrice()
     appData.title = appData.getTitle(appData.title)
+    appData.logger();
   },
+
   logger: function () {
-    for(appData.fullPrice in appData.getFullPrice){
-      console.log(appData.fullPrice);
-      console.log(appData.servicePercentPrice);
-    }
+    for (let key in appData) {
+    console.log(key, appData[key])
   }
+}
 }
 appData.start()
 
