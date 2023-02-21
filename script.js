@@ -19,7 +19,7 @@ const appData = {
     return +appData.screenPrice + appData.allServicePrices
     },
     getServicePercentPrice : function () {
-    return appData.fullPrice - (appData.fullPrice * (appData.rollback / 100))
+    appData.servicePercentPrice =  appData.fullPrice - (appData.fullPrice * (appData.rollback / 100))
   },
  asking : function () {
   appData.title = prompt('Как называется ваш проект?', 'калькулятор')
@@ -71,7 +71,7 @@ const appData = {
     appData.asking()
     appData.allServicePrices = appData.getAllServicePrices()
     appData.fullPrice = appData.getFullPrice() 
-    appData.servicePercentPrice = appData.getServicePercentPrice()
+    appData.getServicePercentPrice()
     appData.title = appData.getTitle(appData.title)
     appData.logger();
   },
