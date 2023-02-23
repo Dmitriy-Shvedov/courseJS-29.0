@@ -7,7 +7,11 @@ let percentItem = document.querySelectorAll('.other-items.percent');
 let numberItem = document.querySelectorAll('.other-items.number ');
 let inputRange = document.querySelector('.rollback > .main-controls__range > input[type="range"]');
 let span = document.querySelector('.rollback > .main-controls__range > span');
-const input = document.getElementsByClassName('.total-input');
+let priceLayout = document.getElementsByClassName('total-input')[0];
+let numberOfScreens = document.getElementsByClassName('total-input')[1];
+let priceAddService = document.getElementsByClassName('total-input')[2];
+let fullPrice = document.getElementsByClassName('total-input')[3];
+let rollbackPrice = document.getElementsByClassName('total-input')[4];
 let screen = document.querySelectorAll('.screen');
 
 
