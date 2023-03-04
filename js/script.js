@@ -30,16 +30,31 @@ const appData = {
 
   init: function () {
     appData.addTitle()
-    if(appData.select == '' && appData.input == ''){
-      // btn.disabled = true;
-      btn.addEventListener('click', appData.start)
-      alert('Не пусто')
-    }else{
-      // btn.disabled = false;
-      alert('пусто')
-    }
+    // if(appData.select == '' && appData.input == ''){
+    //   // btn.disabled = true;
+    //   btn.addEventListener('click', appData.start)
+    //   console.log('Не пусто');
+      
+    // }else{
+    //   // btn.disabled = false;
+    //   console.log('пусто');
+    //    btn.style.backgroundColor = "#eda69d";
+    //    btn.style.cursor = "not-allowed";
+    // }
     
-    // btn.addEventListener('click', appData.start)
+
+    btn.addEventListener('click', function() {
+    // appData.start
+      if(appData.select == '' && appData.input == ''){
+        appData.start
+        console.log('Не пусто');
+        
+      }else{
+        btn.style.backgroundColor = "#eda69d";
+        console.log('пусто');
+      }
+    })
+
 
     plus.addEventListener('click', appData.addScreenBlock)
     inputRange.addEventListener('input', appData.addinputRange);
@@ -133,7 +148,7 @@ const appData = {
     console.log(cloneScreen);
     screen[screen.length - 1].after(cloneScreen)
     // screen[screen.length - 1].defore(cloneScreen)
-    console.log();
+    console.log(cloneScreen);
   },
   addPrices: function () {
       for (let screen of appData.screens) {
